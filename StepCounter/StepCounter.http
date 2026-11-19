@@ -1,0 +1,36 @@
+@StepCounter_HostAddress = http://localhost:5271
+
+GET {{StepCounter_HostAddress}}/api/step-entries
+Accept: application/json
+
+###
+
+POST {{StepCounter_HostAddress}}/api/step-entries
+Content-Type: application/json
+
+{
+  "entryDate": "2026-11-17",
+  "steps": 8500,
+  "goalSteps": 10000
+}
+
+###
+
+PUT {{StepCounter_HostAddress}}/api/step-entries/1
+Content-Type: application/json
+
+{
+  "steps": 9000,
+  "goalSteps": 10000
+}
+
+###
+
+DELETE {{StepCounter_HostAddress}}/api/step-entries/1
+
+###
+
+GET {{StepCounter_HostAddress}}/api/user-settings
+Accept: application/json
+
+###
